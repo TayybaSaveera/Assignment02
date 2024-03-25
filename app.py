@@ -12,7 +12,7 @@ def predict():
     # Get input features from request
     data = request.json
     features = data['features']
-    
+
     # Convert features to array and make prediction
     features_array = [
         features['sepal_length'],
@@ -21,7 +21,7 @@ def predict():
         features['petal_width']
     ]
     prediction = model.predict([features_array])[0]
-    
+
     # Map prediction to class label
     species_mapping = {
         0: 'setosa',
@@ -29,7 +29,7 @@ def predict():
         2: 'virginica'
     }
     predicted_species = species_mapping[prediction]
-    
+
     # Return prediction as JSON response
     return jsonify({'predicted_species': predicted_species})
 
