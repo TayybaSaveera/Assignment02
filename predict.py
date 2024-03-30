@@ -19,6 +19,6 @@ response = requests.post(url, json={'features': input_features})
 if response.status_code == 200:
     data = response.json()
     predicted_species = data['predicted_species']
-    print(f"Predicted Species: {predicted_species}")
+    print(f"Predicted Species are: {predicted_species}")
 else:
     print("Failed to make prediction. Status code:", response.status_code)
