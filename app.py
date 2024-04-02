@@ -11,15 +11,10 @@ model = joblib.load('model.pkl')
 def predict():
     # Get input features from request
     data = request.json
-    features = data['features']
+    # Directly use data if it's already in the correct format
+    features_array = data
 
-    # Convert features to array and make prediction
-    features_array = [
-        features['sepal_length'],
-        features['sepal_width'],
-        features['petal_length'],
-        features['petal_width']
-    ]
+    # Make prediction
     prediction = model.predict([features_array])[0]
 
     # Map prediction to class label
