@@ -6,11 +6,11 @@ app = Flask(__name__)
 # Load the trained model
 model = joblib.load('model.pkl')
 
+
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get input features from request
     data = request.json
-    # Assuming features are sent as a list in the order [sepal_length, sepal_width, petal_length, petal_width]
     # Directly use data if it's already in the correct format
     features_array = data
 
@@ -27,6 +27,7 @@ def predict():
 
     # Return prediction as JSON response
     return jsonify({'predicted_species': predicted_species})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
