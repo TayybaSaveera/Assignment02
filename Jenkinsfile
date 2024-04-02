@@ -36,13 +36,13 @@ pipeline {
     post {
         success {
             // Send an email notification on successful build
-            mail to: 'admin@example.com',
+            mail to: 'mu3931368@.gmailcom',
                  subject: "Successful Deployment: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "A new Docker image has been pushed to Docker Hub: ${IMAGE_NAME}:${IMAGE_TAG}."
         }
         failure {
             // Send an email notification on failure
-            mail to: 'admin@example.com',
+            mail to: 'mu3931368@.gmailcom',
                  subject: "Failed Deployment: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "The build or deployment has failed. Please check Jenkins for more details."
         }
