@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define Docker Hub credentials ID and image name
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
-        IMAGE_NAME = 'mlops/assignment'
+        IMAGE_NAME = 'usman2602/mlopsassignment'
         IMAGE_TAG = 'latest' // Or use ${env.BUILD_NUMBER} for dynamic tagging
     }
 
